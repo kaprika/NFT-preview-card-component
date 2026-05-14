@@ -1,0 +1,158 @@
+:root {
+    --primary-color-500: hsl(215, 51%, 70%);
+    --primary-color-400: hsl(178, 100%, 50%);
+    --background-color-main: hsl(217, 54%, 11%);
+    --background-color-card: hsl(216, 50%, 16%);
+    --color-line: hsl(215, 32%, 27%);
+    --color-light: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    font-weight: 300;
+    line-height: 1.5;
+    font-size: 1.8rem;
+    color: var(--primary-color-500);
+    background-color: var(--background-color-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    background-color: var(--background-color-card);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.card__title {
+    color: var(--color-light);
+    font-weight: 600;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.card__title:hover {
+    color: var(--primary-color-400);
+}
+
+.card__ETH {
+    color: var(--primary-color-400);
+    font-weight: 400;
+}
+
+.card__name {
+    color: var(--color-light);
+    cursor: pointer;
+}
+
+.card__name:hover {
+    color: var(--primary-color-400);
+}
+
+.card__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--color-light);
+    border-radius: 90px;
+}
+
+.card__avatar-container {
+    width: 30px;
+}
+
+.card__img-container {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__img-container::after {
+    border-radius: 15px;
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: var(--primary-color-400);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card__img-container::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: url("../../assets/icons/icon-view.svg") no-repeat center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card__img-container:hover::before {
+    opacity: 1;
+}
+
+
+
+.card__img-container:hover::after {
+    opacity: 0.3;
+}
+
+.card__img-container:hover {
+    background-color: var(--primary-color-400);
+}
+
+.card__data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card__clock {
+    margin-left: auto;
+}
+
+.card__signature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card__signature-item {
+    line-height: 1;
+}
+
+.line {
+    display: block;
+    border-bottom: 1px solid var(--color-line);
+    width: 100%;
+}
